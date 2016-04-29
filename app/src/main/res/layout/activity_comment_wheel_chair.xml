@@ -7,22 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="appewtc.masterung.welovewheelchair.CommentWheelChair">
+    tools:context="appewtc.masterung.welovewheelchair.CommentWheelChair"
+    android:background="@drawable/bg100">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show vheelchair"
-        android:id="@+id/textView15"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/imageView21"
+        android:src="@drawable/ans" />
 
     <ImageView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView20"
-        android:layout_below="@+id/textView15"
+        android:layout_below="@+id/imageView21"
         android:layout_centerHorizontal="true" />
 
     <ScrollView
@@ -31,13 +29,15 @@
         android:id="@+id/scrollView8"
         android:layout_below="@+id/imageView20"
         android:layout_centerHorizontal="true"
-        android:padding="15dp" >
+        android:padding="15dp"
+        android:background="#82ffffff">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView32"
+            android:id="@+id/txtDetail"
             android:textSize="@dimen/h2" />
     </ScrollView>
+
 </RelativeLayout>
