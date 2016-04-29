@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickHub2(View view) {
-        startActivity(new Intent(MainActivity.this, ShopWheelChairActivity.class));
+        startActivity(new Intent(MainActivity.this, MapsActivity.class));
 
     }
 
