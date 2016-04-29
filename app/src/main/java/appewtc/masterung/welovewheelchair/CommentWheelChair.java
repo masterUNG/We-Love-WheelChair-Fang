@@ -19,14 +19,16 @@ public class CommentWheelChair extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment_wheel_chair);
 
-        //Bind Widget
+        //
         imageView = (ImageView) findViewById(R.id.imageView20);
         textView = (TextView) findViewById(R.id.txtDetail);
+
 
         //รับค่า from intent
         chooseString = getIntent().getStringArrayExtra("Choose");
         // setup value
         chooseATnt = findChoose();
+
 
         //showView();
         ShowView();
@@ -72,36 +74,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[4];
                 break;
             //
-            case 11231:
+            case 11211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 11232:
+            case 11212:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 1123:
+            case 11213:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
-            case 11234:
+            case 11214:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
             //
-            case 11241:
+            case 11221:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 11242:
+            case 11222:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
-            case 11243:
+            case 11223:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
-            case 11244:
+            case 11224:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
@@ -141,36 +143,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[4];
                 break;
             //
-            case 12231:
+            case 12211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 12232:
+            case 12212:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 12233:
+            case 12213:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
-            case 12234:
+            case 12214:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[3];
                 break;
             //
-            case 12341:
+            case 12321:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 12342:
+            case 12322:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 12343:
+            case 12323:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
-            case 12344:
+            case 12324:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[4];
                 break;
@@ -208,37 +210,37 @@ public class CommentWheelChair extends AppCompatActivity {
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            //
-            case 13231:
+            // ๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅๅ
+            case 13211:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 13232:
+            case 13212:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            case 13233:
+            case 13213:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            case 13234:
+            case 13214:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
             //
-            case 13241:
+            case 13221:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 13242:
+            case 13222:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            case 13243:
+            case 13223:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            case 13244:
+            case 13224:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
@@ -278,36 +280,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[4];
                 break;
             //
-            case 21231:
+            case 21211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 21232:
+            case 21212:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
-            case 21233:
+            case 21213:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
-            case 21234:
+            case 21214:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
             //
-            case 21241:
+            case 21221:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 21242:
+            case 21222:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
-            case 21243:
+            case 21223:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
-            case 21244:
+            case 21224:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 break;
@@ -347,36 +349,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[4];
                 break;
             //
-            case 22231:
+            case 22211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22232:
+            case 22212:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22233:
+            case 22213:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22234:
+            case 22214:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
             //
-            case 22241:
+            case 22221:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22242:
+            case 22222:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22243:
+            case 22223:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 22244:
+            case 22224:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
@@ -398,42 +400,42 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[3];
                 break;
             //
-            case 23221:
+            case 23121:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 23222:
+            case 23122:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 23223:
+            case 23123:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
-            case 23224:
+            case 23124:
                 imageAnInt = R.drawable.wh3;
                 contentString = dataStrings[3];
                 break;
 
             //
-            case 23231:
+            case 23211:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 23232:
+            case 23212:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 23233:
+            case 23213:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 23234:
+            case 23214:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
             //
-            case 23241:
+            case 23221:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
@@ -481,33 +483,33 @@ public class CommentWheelChair extends AppCompatActivity {
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 //
-            case 31231:
+            case 31211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 31232:
+            case 31212:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
-            case 31233:
+            case 31213:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
-            case 31234:
+            case 31214:
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 //
-            case 31241:
+            case 31221:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 31242:
+            case 31222:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 31243:
+            case 31223:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 31244:
+            case 31224:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
@@ -543,36 +545,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 imageAnInt = R.drawable.wh4;
                 contentString = dataStrings[4];
                 //
-            case 32231:
+            case 32211:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32232:
+            case 32212:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32233:
+            case 32213:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32234:
+            case 32214:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
             //
-            case 32241:
+            case 32221:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32242:
+            case 32222:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32243:
+            case 32223:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
-            case 32244:
+            case 32224:
                 imageAnInt = R.drawable.wh1;
                 contentString = dataStrings[1];
                 break;
@@ -611,36 +613,36 @@ public class CommentWheelChair extends AppCompatActivity {
                 contentString = dataStrings[2];
                 break;
             //
-            case 33231:
+            case 33211:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 33232:
+            case 33212:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 33233:
+            case 33213:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 33234:
+            case 33214:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
             //
-            case 33241:
+            case 33221:
                 imageAnInt = R.drawable.wh5;
                 contentString = dataStrings[5];
                 break;
-            case 33242:
+            case 33222:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 33243:
+            case 33223:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
-            case 33244:
+            case 33224:
                 imageAnInt = R.drawable.wh2;
                 contentString = dataStrings[2];
                 break;
@@ -651,12 +653,13 @@ public class CommentWheelChair extends AppCompatActivity {
                 break;
 
 
-        }   // Switch
+        }// switch
 
         imageView.setImageResource(imageAnInt);
         textView.setText(contentString);
 
-    }   // Show View
+    } //show View
+
 
     private int findChoose() {
         StringBuilder stringBuilder = new StringBuilder();
