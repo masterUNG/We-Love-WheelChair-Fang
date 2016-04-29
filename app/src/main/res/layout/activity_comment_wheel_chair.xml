@@ -14,8 +14,30 @@
         android:layout_height="wrap_content"
         android:text="Show vheelchair"
         android:id="@+id/textView15"
-        android:layout_marginTop="192dp"
         android:textSize="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView20"
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView8"
+        android:layout_below="@+id/imageView20"
+        android:layout_centerHorizontal="true"
+        android:padding="15dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView32"
+            android:textSize="@dimen/h2" />
+    </ScrollView>
 </RelativeLayout>
