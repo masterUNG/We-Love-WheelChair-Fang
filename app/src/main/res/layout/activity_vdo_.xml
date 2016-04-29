@@ -12,45 +12,52 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg100"
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView22" />
+            android:id="@+id/imageView22"
+            android:src="@drawable/vdo" />
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical">
 
-            <Button
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button2"
+                android:id="@+id/imageButton"
+                android:src="@drawable/play1_200"
                 android:onClick="clickVideo1" />
 
-            <Button
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button3"
+                android:id="@+id/imageButton2"
+                android:src="@drawable/play2_200"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:onClick="clickVideo2" />
 
-            <Button
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button4"
+                android:id="@+id/imageButton3"
+                android:src="@drawable/play3_200"
                 android:onClick="clickVideo3" />
 
-            <Button
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button5"
+                android:id="@+id/imageButton4"
+                android:src="@drawable/play4_200"
+                android:layout_marginTop="10dp"
                 android:onClick="clickVideo4" />
         </LinearLayout>
 

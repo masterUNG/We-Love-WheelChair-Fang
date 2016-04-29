@@ -1,14 +1,19 @@
 package appewtc.masterung.welovewheelchair;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ShopWheelChairActivity extends AppCompatActivity {
 
@@ -48,6 +53,40 @@ public class ShopWheelChairActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("29April", "JSON ==> " + s);
+
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+
+                String[] ShopNameStrings = new String[jsonArray.length()];
+                String[] AddressStrings = new String[jsonArray.length()];
+                String[] PhoneStrings = new String[jsonArray.length()];
+                String[] IconStrings = new String[jsonArray.length()];
+                String[] LatStrings = new String[jsonArray.length()];
+                String[] LngStrings = new String[jsonArray.length()];
+                String[] CategoryStrings = new String[jsonArray.length()];
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    ShopNameStrings[i] = jsonObject.getString("ShopName");
+                    AddressStrings[i] = jsonObject.getString("Address");
+                    PhoneStrings[i] = jsonObject.getString("Phone");
+                    IconStrings[i] = jsonObject.getString("Icon");
+                    LatStrings[i] = jsonObject.getString("Lat");
+                    LngStrings[i] = jsonObject.getString("Lng");
+                    CategoryStrings[i] = jsonObject.getString("Category");
+
+                }   // for
+
+                ListView listView = (ListView) findViewById(R.id.listView);
+                ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(ShopWheelChairActivity.this,
+                        android.R.layout.simple_list_item_1, ShopNameStrings);
+                listView.setAdapter(stringArrayAdapter);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }   // onPost
 
