@@ -97,10 +97,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     double lng = Double.parseDouble(LngStrings[i]);
                     LatLng latLng = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions()
-                    .position(latLng)
-                    .icon(BitmapDescriptorFactory.fromResource(iconInts[i])));
-
-
+                            .position(latLng)
+                            .icon(BitmapDescriptorFactory.fromResource(iconInts[i])));
 
 
                 }   // for
@@ -125,9 +123,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         return true;
                     }   // onMarkerClick
                 });
-
-
-
 
 
             } catch (Exception e) {
