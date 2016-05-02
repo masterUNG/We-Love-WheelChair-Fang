@@ -13,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -101,6 +102,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
                 }   // for
+
+                mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+
+                        Intent intent = new Intent(MapsActivity.this, DetailShop.class);
+                        startActivity(intent);
+
+                        return true;
+                    }   // onMarkerClick
+                });
 
 
 
