@@ -1,10 +1,12 @@
 package appewtc.masterung.welovewheelchair;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,6 +48,19 @@ public class CategoryListView extends AppCompatActivity {
 
     }   // Main Method
 
+    private int findIconForMarker(String iconString) {
+
+        int intIcon = R.drawable.first_hand;
+
+        if (iconString.equals("มือหนึ่ง")) {
+            intIcon = R.drawable.first_hand;
+        } else {
+            intIcon = R.drawable.second_hand;
+        }
+
+        return intIcon;
+    }
+
     //Create Inner Class
     public class MyConnected extends AsyncTask<Void, Void, String> {
 
@@ -76,11 +91,12 @@ public class CategoryListView extends AppCompatActivity {
                 JSONArray jsonArray = new JSONArray(s);
 
                 int intCount = jsonArray.length();
-                String[] nameStrings = new String[intCount];
-                String[] addressStrings = new String[intCount];
-                String[] phoneStrings = new String[intCount];
-                String[] categoryStrings = new String[intCount];
+                final String[] nameStrings = new String[intCount];
+                final String[] addressStrings = new String[intCount];
+                final String[] phoneStrings = new String[intCount];
+                final String[] categoryStrings = new String[intCount];
                 String[] iconStrings = new String[intCount];
+                final int[] iconInts = new int[intCount];
 
                 for (int i = 0; i < intCount; i++) {
 
@@ -90,12 +106,33 @@ public class CategoryListView extends AppCompatActivity {
                     phoneStrings[i] = jsonObject.getString("Phone");
                     categoryStrings[i] = jsonObject.getString("Category");
                     iconStrings[i] = jsonObject.getString("Icon");
+                    iconInts[i] = findIconForMarker(iconStrings[i]);
 
                 }   // for
 
                 ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(CategoryListView.this,
                         android.R.layout.simple_list_item_1, nameStrings);
                 listView.setAdapter(stringArrayAdapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int intIndex, long l) {
+
+                        Intent intent = new Intent(CategoryListView.this, DetailShop.class);
+
+                        intent.putExtra("Name", nameStrings[intIndex]);
+                        intent.putExtra("Address", addressStrings[intIndex]);
+                        intent.putExtra("Phone", phoneStrings[intIndex]);
+                        intent.putExtra("Category", categoryStrings[intIndex]);
+                        intent.putExtra("Image", iconInts[intIndex]);
+
+                        startActivity(intent);
+
+
+                    }   // onItemClick
+                });
+
+
 
             } catch (Exception e) {
                 e.printStackTrace();
