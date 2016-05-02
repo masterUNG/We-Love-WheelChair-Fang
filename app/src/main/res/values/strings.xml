@@ -113,6 +113,11 @@
 
     <string name="label_map">รายละเอียดร้านค้า</string>
 
+    <string name="textView37">ชื่อสถานที่</string>
+    <string name="textView38">ที่อยู่</string>
+    <string name="textView39">เวลาเปิดปิด</string>
+    <string name="textView40">รายละเอียด</string>
+
 
 </resources>
 
