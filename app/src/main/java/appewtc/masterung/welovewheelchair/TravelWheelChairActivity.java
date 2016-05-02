@@ -1,8 +1,11 @@
 package appewtc.masterung.welovewheelchair;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -57,12 +60,12 @@ public class TravelWheelChairActivity extends AppCompatActivity {
 
                 JSONArray jsonArray = new JSONArray(s);
 
-                String[] namePlaceStrings = new String[jsonArray.length()];
-                String[] addressStrings = new String[jsonArray.length()];
-                String[] openCloseStrings = new String[jsonArray.length()];
-                String[] descriptionStrings = new String[jsonArray.length()];
-                String[] imagePlaceStrings = new String[jsonArray.length()];
-                String[] imageServiceStrings = new String[jsonArray.length()];
+                final String[] namePlaceStrings = new String[jsonArray.length()];
+                final String[] addressStrings = new String[jsonArray.length()];
+                final String[] openCloseStrings = new String[jsonArray.length()];
+                final String[] descriptionStrings = new String[jsonArray.length()];
+                final String[] imagePlaceStrings = new String[jsonArray.length()];
+                final String[] imageServiceStrings = new String[jsonArray.length()];
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -79,6 +82,23 @@ public class TravelWheelChairActivity extends AppCompatActivity {
                 ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(TravelWheelChairActivity.this,
                         android.R.layout.simple_list_item_1, namePlaceStrings);
                 listView.setAdapter(stringArrayAdapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        Intent intent = new Intent(TravelWheelChairActivity.this, DetailTravel.class);
+
+                        intent.putExtra("NamePlace", namePlaceStrings[i]);
+                        intent.putExtra("Address", addressStrings[i]);
+                        intent.putExtra("OpenClose", openCloseStrings[i]);
+                        intent.putExtra("Description", descriptionStrings[i]);
+                        intent.putExtra("ImagePlace", imagePlaceStrings[i]);
+                        intent.putExtra("ImageService", imageServiceStrings[i]);
+
+                        startActivity(intent);
+                    }   // onItemClick
+                });
 
 
             } catch (Exception e) {
