@@ -37,6 +37,7 @@ public class DetailTravel extends AppCompatActivity {
         placeString = getIntent().getStringExtra("ImagePlace");
         serviceString = getIntent().getStringExtra("ImageService");
 
+
         //Show View
         nameTextView.setText(nameString);
         addressTextView.setText(addressString);
