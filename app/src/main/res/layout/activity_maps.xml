@@ -7,7 +7,8 @@
         android:layout_height="wrap_content"
         android:text="List Shop"
         android:id="@+id/button2"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:onClick="clickListShop" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
