@@ -32,10 +32,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView34"
+            android:textSize="@dimen/h2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/textView23"
             android:id="@+id/textView23"
             android:textSize="@dimen/h1"
             android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView35"
+            android:textSize="@dimen/h2" />
 
         <TextView
             android:layout_width="wrap_content"

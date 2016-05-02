@@ -69,14 +69,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 JSONArray jsonArray = new JSONArray(s);
 
-                String[] ShopNameStrings = new String[jsonArray.length()];
-                String[] AddressStrings = new String[jsonArray.length()];
-                String[] PhoneStrings = new String[jsonArray.length()];
+                final String[] ShopNameStrings = new String[jsonArray.length()];
+                final String[] AddressStrings = new String[jsonArray.length()];
+                final String[] PhoneStrings = new String[jsonArray.length()];
                 String[] IconStrings = new String[jsonArray.length()];
                 String[] LatStrings = new String[jsonArray.length()];
                 String[] LngStrings = new String[jsonArray.length()];
-                String[] CategoryStrings = new String[jsonArray.length()];
-                int[] iconInts = new int[jsonArray.length()];
+                final String[] CategoryStrings = new String[jsonArray.length()];
+                final int[] iconInts = new int[jsonArray.length()];
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -101,13 +101,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .icon(BitmapDescriptorFactory.fromResource(iconInts[i])));
 
 
+
+
                 }   // for
 
                 mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
 
+                        String strIndex = marker.getId().toString().substring(1);
+                        int intIndex = Integer.parseInt(strIndex);
+
                         Intent intent = new Intent(MapsActivity.this, DetailShop.class);
+
+                        intent.putExtra("Name", ShopNameStrings[intIndex]);
+                        intent.putExtra("Address", AddressStrings[intIndex]);
+                        intent.putExtra("Phone", PhoneStrings[intIndex]);
+                        intent.putExtra("Category", CategoryStrings[intIndex]);
+                        intent.putExtra("Image", iconInts[intIndex]);
+
                         startActivity(intent);
 
                         return true;
