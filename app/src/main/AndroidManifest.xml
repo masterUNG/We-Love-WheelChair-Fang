@@ -54,7 +54,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".DetailShop"></activity>
+        <activity android:name=".DetailShop" />
+        <activity android:name=".ChooseSection"></activity>
     </application>
 
 </manifest>

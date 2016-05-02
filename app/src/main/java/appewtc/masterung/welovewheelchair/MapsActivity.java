@@ -1,8 +1,10 @@
 package appewtc.masterung.welovewheelchair;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -10,6 +12,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -27,8 +36,81 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }   // Main Method
 
+    //Create Inner Class
+    public class ConnectedJSON extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try {
+
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request.Builder builder = new Request.Builder();
+                Request request = builder.url("http://swiftcodingthai.com/nuk/php_get_shop.php").build();
+                Response response = okHttpClient.newCall(request).execute();
+                return response.body().string();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+
+        }   // doInBack
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            Log.d("2May", "JSON ==> " + s);
+
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+
+                String[] ShopNameStrings = new String[jsonArray.length()];
+                String[] AddressStrings = new String[jsonArray.length()];
+                String[] PhoneStrings = new String[jsonArray.length()];
+                String[] IconStrings = new String[jsonArray.length()];
+                String[] LatStrings = new String[jsonArray.length()];
+                String[] LngStrings = new String[jsonArray.length()];
+                String[] CategoryStrings = new String[jsonArray.length()];
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    ShopNameStrings[i] = jsonObject.getString("ShopName");
+                    AddressStrings[i] = jsonObject.getString("Address");
+                    PhoneStrings[i] = jsonObject.getString("Phone");
+                    IconStrings[i] = jsonObject.getString("Icon");
+                    LatStrings[i] = jsonObject.getString("Lat");
+                    LngStrings[i] = jsonObject.getString("Lng");
+                    CategoryStrings[i] = jsonObject.getString("Category");
+
+                    //Create All Marker
+                    double lat = Double.parseDouble(LatStrings[i]);
+                    double lng = Double.parseDouble(LngStrings[i]);
+                    LatLng latLng = new LatLng(lat, lng);
+                    mMap.addMarker(new MarkerOptions()
+                    .position(latLng));
+
+
+                }   // for
+
+
+
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }   // onPost
+
+    }   // ConnectedJSON Class
+
+
     public void clickListShop(View view) {
-        startActivity(new Intent(MapsActivity.this, ShopWheelChairActivity.class));
+        startActivity(new Intent(MapsActivity.this, ChooseSection.class));
     }
 
     @Override
@@ -38,6 +120,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //Setup Center Thailand
         LatLng latLng = new LatLng(centerLatADouble, centerLngADouble);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 6));
+
+        ConnectedJSON connectedJSON = new ConnectedJSON();
+        connectedJSON.execute();
 
     }   // onMap
 
