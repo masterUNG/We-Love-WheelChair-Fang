@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.squareup.okhttp.OkHttpClient;
@@ -74,6 +75,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 String[] LatStrings = new String[jsonArray.length()];
                 String[] LngStrings = new String[jsonArray.length()];
                 String[] CategoryStrings = new String[jsonArray.length()];
+                int[] iconInts = new int[jsonArray.length()];
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -86,12 +88,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LngStrings[i] = jsonObject.getString("Lng");
                     CategoryStrings[i] = jsonObject.getString("Category");
 
+                    //Find Icon for Marker
+                    iconInts[i] = findIconForMarker(IconStrings[i]);
+
                     //Create All Marker
                     double lat = Double.parseDouble(LatStrings[i]);
                     double lng = Double.parseDouble(LngStrings[i]);
                     LatLng latLng = new LatLng(lat, lng);
                     mMap.addMarker(new MarkerOptions()
-                    .position(latLng));
+                    .position(latLng)
+                    .icon(BitmapDescriptorFactory.fromResource(iconInts[i])));
 
 
                 }   // for
@@ -107,6 +113,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }   // onPost
 
     }   // ConnectedJSON Class
+
+    private int findIconForMarker(String iconString) {
+
+        int intIcon = R.drawable.first_hand;
+
+        if (iconString.equals("มือหนึ่ง")) {
+            intIcon = R.drawable.first_hand;
+        } else {
+            intIcon = R.drawable.second_hand;
+        }
+
+        return intIcon;
+    }
 
 
     public void clickListShop(View view) {
